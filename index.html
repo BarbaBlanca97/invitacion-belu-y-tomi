@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Belu y Tomi</title>
+</head>
+<body>
+    <main>
+        <div style="text-align: center;">
+            <div id="pre-invitation">
+                <button style="background-color: #d436d6; color: white; font-weight: 700px; padding: 10px 20px; border-radius: 8px; border: none;" onclick="showInvitation()">Ver invitación</button>
+            </div>
+            <div id="invitation" style="display: none;">
+                <img src="invitacion.png" alt="Invitación Belu y Tomi" style="width: 100%; max-width: 600px;">
+                <div>
+                    <img src="https://cdn.pixabay.com/animation/2023/09/10/06/34/06-34-32-601_512.gif" style="max-height: 200px;">
+                    <img src="https://i.gifer.com/Af6V.gif" style="max-height: 200px;">
+                    <img src="https://media.tenor.com/images/8aa564cdadb2d8e7bf361ab6fdd0867d/tenor.gif" style="max-height: 200px;">
+                </div>
+                <audio id="audio" src="nenemalo.mp3" loop></audio>
+            </div>
+        </div>
+    </main>
+    <script>
+        function showInvitation() {
+            const audio = document.getElementById('audio');
+            audio.play();
+
+            const preInvitation = document.getElementById('pre-invitation');
+            preInvitation.style.display = 'none';
+
+            const invitation = document.getElementById('invitation');
+            invitation.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -3,36 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación Belu y Tomi</title>
+    <title>Casamiento Belu y Tomi</title>
+    <link rel="stylesheet" href="styles_output.css">
 </head>
-<body>
-    <main>
-        <div style="text-align: center;">
-            <div id="pre-invitation">
-                <button style="background-color: #d436d6; color: white; font-weight: 700px; padding: 10px 20px; border-radius: 8px; border: none;" onclick="showInvitation()">Ver invitación</button>
+<body class="font-display">
+    <main width="100%">
+        <div class="section color__primary h-svh">
+            <div class="section--content">
+                <h1>Belu y Tomi</h1>
             </div>
-            <div id="invitation" style="display: none;">
-                <img src="invitacion.png" alt="Invitación Belu y Tomi" style="width: 100%; max-width: 600px;">
-                <div>
-                    <img src="https://cdn.pixabay.com/animation/2023/09/10/06/34/06-34-32-601_512.gif" style="max-height: 200px;">
-                    <img src="https://i.gifer.com/Af6V.gif" style="max-height: 200px;">
-                    <img src="https://media.tenor.com/images/8aa564cdadb2d8e7bf361ab6fdd0867d/tenor.gif" style="max-height: 200px;">
+        </div>
+        <div class="section bg__primary">
+            <div class="section--content color__light">
+                <h2 class="section--header">¡Nos casamos!</h2>
+                <p>¡Hola! Estamos muy felices de poder compartir con ustedes este momento tan especial</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section--content color__primary">
+                <!-- TODO Add responsiveness -->
+                <p class="date font-semibold text-3xl">24 de Marzo</p>
+                <p class="time">a las <span class="font-semibold">13:00 hs</span></p>
+                <p class="font-semibold text-3xl mt-6 mb-2">Faltan</p>
+                <div class="countdown">
+                    <div class="countdown--item">
+                        <span class="countdown--item--amount">0</span>
+                        <span class="countdown--item--unit">días</span>
+                    </div>
+                    <div class="countdown--item">
+                        <span class="countdown--item--amount">0</span>
+                        <span class="countdown--item--unit">horas</span>
+                    </div>
+                    <div class="countdown--item">
+                        <span class="countdown--item--amount">0</span>
+                        <span class="countdown--item--unit">minutos</span>
+                    </div>
+                    <div class="countdown--item">
+                        <span class="countdown--item--amount">0</span>
+                        <span class="countdown--item--unit">segundos</span>
+                    </div>
                 </div>
-                <audio id="audio" src="nenemalo.mp3" loop></audio>
+            </div>
+        </div>
+        <div class="section bg__primary">
+            <div class="section--content color__light">
+                <h2 class="section--header">Confirmá tu asistencia</h2>
+                <div class="whatsapp">
+                    <a class="whatsapp-box" href="https://wa.me/543435162246" target="_blank">
+                        <img class="whatsapp-box--image" src="foto-wsp-belu.png" />
+                        <div class="whatsapp-box--message">
+                            <img src="whatsapp-24.svg"/>
+                            <span>Whatsapp de Belu</span>
+                        </div>
+                    </a>
+                    <a class="whatsapp-box" href="https://wa.me/543435162246" target="_blank">
+                        <img class="whatsapp-box--image" src="foto-wsp-tomi.png" />
+                        <div class="whatsapp-box--message">
+                            <img src="whatsapp-24.svg"/>
+                            <span>Whatsapp de Tomi</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
     <script>
-        function showInvitation() {
-            const audio = document.getElementById('audio');
-            audio.play();
+        const eventDate = new Date('2025-05-24T13:00:00.000-03:00')
+        const countdownItemsAmount = document.querySelectorAll('.countdown--item--amount')
+        
+        function setCountdown() {
+            let remainingTime = eventDate.getTime() - Date.now()
 
-            const preInvitation = document.getElementById('pre-invitation');
-            preInvitation.style.display = 'none';
+            if (remainingTime < 0) {
+                return
+            }
+            
+            const daysLeft = Math.floor(remainingTime / (1000 * 60 * 60 * 24))
+            countdownItemsAmount[0].textContent = daysLeft
+            remainingTime = remainingTime - (daysLeft * 1000 * 60 * 60 * 24)
 
-            const invitation = document.getElementById('invitation');
-            invitation.style.display = 'block';
+            const hoursLeft = Math.floor(remainingTime / (1000 * 60 * 60))
+            countdownItemsAmount[1].textContent = hoursLeft
+            remainingTime = remainingTime - (hoursLeft * 1000 * 60 * 60)
+
+            const minutesLeft = Math.floor(remainingTime / (1000 * 60))
+            countdownItemsAmount[2].textContent = minutesLeft
+            remainingTime = remainingTime - (minutesLeft * 1000 * 60)
+
+            const secondsLeft = Math.floor(remainingTime / (1000))
+            countdownItemsAmount[3].textContent = secondsLeft
         }
+
+        setCountdown()
+        setInterval(setCountdown, 1000)
     </script>
 </body>
 </html>

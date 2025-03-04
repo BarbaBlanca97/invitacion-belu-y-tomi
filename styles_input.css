@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+    --color-primary: #FF6B6B;
+    --color-light: #FFFFFF;
+    --color-light-transparent: #FFFFFF30;
+}
+
+.bg__primary {
+    background-color: var(--color-primary);
+}
+
+.color__primary {
+    color: var(--color-primary);
+}
+
+.color__light {
+    color: var(--color-light);
+}
+
+@theme {
+    --font-display: 'Lora', serif;
+}
+
+body {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-top: 0px;
+}
+
+p {
+    text-align: center;
+}
+
+@layer components {
+    .section {
+        position: relative;
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    
+        align-items: center;
+        justify-content: center;
+    
+        padding: 60px 35px;
+    
+        background-color: var(--color-light);
+    }
+
+    .section--header {
+        font-size: 30px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+    }
+
+    .section--content {
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    
+        align-items: center;
+        justify-content: center;
+    }
+
+    .countdown {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+    
+        align-items: center;
+        justify-content: center;
+    }
+
+    .countdown--item {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    
+        align-items: center;
+        justify-content: center;
+    
+        margin: 0 20px;
+    }
+
+    .countdown--item--amount {
+        font-size: 50px;
+    }
+    
+    .countdown--item--unit {
+        font-size: 16px;
+    }
+
+    .whatsapp {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+    }
+    
+    .whatsapp-box {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        gap: 20px;
+        
+        align-items: center;
+        justify-content: center;
+    
+        padding: 40px 20px;
+    
+        border: 2px solid var(--color-light);
+        border-radius: 8px;
+    
+        color: var(--color-light);
+    
+        text-decoration: none;
+    }
+    
+    .whatsapp-box:hover {
+        background-color: var(--color-light-transparent);
+    }
+    
+    .whatsapp-box--image {
+        width: 100px;
+        height: 100px;
+    
+        border-radius: 50%;
+    }
+    
+    .whatsapp-box--message {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        gap: 6px;
+    
+        align-items: center;
+        justify-content: center;
+        
+        font-size: 16px;
+    }
+}

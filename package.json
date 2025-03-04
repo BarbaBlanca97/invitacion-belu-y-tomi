@@ -1,0 +1,23 @@
+{
+  "name": "invitacion-belu-y-tomi",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BarbaBlanca97/invitacion-belu-y-tomi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BarbaBlanca97/invitacion-belu-y-tomi/issues"
+  },
+  "homepage": "https://github.com/BarbaBlanca97/invitacion-belu-y-tomi#readme",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.9",
+    "tailwindcss": "^4.0.9"
+  }
+}

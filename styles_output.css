@@ -243,6 +243,9 @@
   .isolation-auto {
     isolation: auto;
   }
+  .z-0 {
+    z-index: 0;
+  }
   .z-auto {
     z-index: auto;
   }
@@ -347,6 +350,9 @@
     @media (width >= 96rem) {
       max-width: 96rem !important;
     }
+  }
+  .m-9 {
+    margin: calc(var(--spacing) * 9);
   }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);

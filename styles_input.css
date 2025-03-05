@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 @import "tailwindcss";
 
 :root {
-    --color-primary: #FF6B6B;
+    --color-primary: #509294;
     --color-light: #FFFFFF;
     --color-light-transparent: #FFFFFF30;
 }
@@ -22,6 +22,7 @@
 
 @theme {
     --font-display: 'Lora', serif;
+    --font-fancy: 'Imperial Script', cursive;
 }
 
 body {
@@ -58,8 +59,17 @@ p {
 
     .section--header {
         font-size: 30px;
+        font-weight: 600;
         margin-top: 0px;
         margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .section--sub-header {
+        font-size: 22px;
+        font-weight: 600;
+        margin-top: 0px;
+        text-align: center;
     }
 
     .section--content {
@@ -146,5 +156,22 @@ p {
         justify-content: center;
         
         font-size: 16px;
+    }
+}
+
+@media (max-width: 550px) {
+    @layer components {
+        .countdown--item--amount {
+            font-size: 30px;
+            font-weight: 600;
+        }
+        
+        .countdown--item--unit {
+            font-size: 10px;
+        }
+        .whatsapp {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
-    "start": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 9999",
     "start:tailwind": "npx @tailwindcss/cli -i ./styles_input.css -o ./styles_output.css --watch"
   },
   "repository": {

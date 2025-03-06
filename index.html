@@ -10,8 +10,8 @@
     <main width="100%">
         <div class="section color__primary h-svh">
             <div class="section--content font-fancy text-9xl">
-                <img class="absolute top-0 left-0" src="corner-flower-top.png"/>
-                <img class="absolute bottom-0 right-0" src="corner-flower.png"/>
+                <img class="absolute top-0 left-0 w-1/2 h-1/2 scale-y-[-1]" src="ornament_corner_1.png"/>
+                <img class="absolute bottom-0 right-0 w-1/2 h-1/2" src="ornament_corner_2.png"/>
                 <span class="font-fancy" style="transform: translate(-20px, 15px);">Belu</span>
                 <span class="font-fancy text-5xl">y</span>
                 <span class="font-fancy" style="transform: translateX(20px);">Tomi</span>
@@ -25,10 +25,9 @@
         </div>
         <div class="section">
             <div class="section--content color__primary">
-                <!-- TODO Add responsiveness -->
                 <span class="date font-semibold text-xs">el</span>
-                <span class="date font-semibold text-3xl">24 de Marzo</span>
-                <span class="time">a las <span class="font-semibold">13:00 hs</span></span>
+                <span class="date font-semibold text-3xl">24 de Mayo</span>
+                <span class="time">a las <span class="font-semibold">11:00 hs</span></span>
                 <span class="font-semibold text-3xl mt-6 mb-2">Faltan</span>
                 <div class="countdown">
                     <div class="countdown--item">
@@ -54,9 +53,9 @@
             <div class="section--content color__light">
                 <h2 class="section--header">¿Dónde?</h2>
                 <p>En el <span class="font-semibold text-2xl">Campo de Golf</span> de Villa Libertador San Martin</p>
-                <img class="my-7" src="foto-ubicacion.jpg" />
+                <!-- <img class="my-7" src="foto-ubicacion.jpg" /> -->
                 <a class="underline" href="https://maps.app.goo.gl/h4tyN59V2nCEJgkdA" target="_blank">
-                    <div class="flex flex-row gap-2">
+                    <div class="flex flex-row gap-2 align-middle mt-3">
                         <img src="location-24.svg" />
                         <span>Ver Ubicación</span>
                     </div>
@@ -65,47 +64,48 @@
         </div>
         <div class="section">
             <div class="section--content color__primary">
-                <h2 class="section--header">Más información</h2>
+                <!-- <h2 class="section--header"></h2> -->
                 <h3 class="section--sub-header">Vestimenta</h3>
                 <p>Elegante</p>
-                <h3 class="section--sub-header mb-0 mt-8">Valor de la tarjeta</h2>
-                <p class="text-base mb-4">Hasta el 15/05</p>
+                <h3 class="section--sub-header mt-8 mb-3">Valor de la tarjeta</h2>
                 <p class="font-semibold text-2xl">$82.000</p>
                 <p class="text-base font-light mb-3">Mayores de 10 años</p>
                 <p class="font-semibold text-2xl">$40.000</p>
                 <p class="text-base font-light">De 2 a 9 años</p>
+                <p class="text-base mt-8 mb-4">Podes transferirnos hasta el <span class="font-semibold">15/05</span>, al alias <span class="font-semibold">jerechiosso.mp</span></p>
             </div>
         </div>
         <div class="section bg__primary">
             <div class="section--content color__light">
-                <h2 class="section--header">Confirmá tu asistencia</h2>
+                <h2 class="section--header">Confirmanos tu asistencia</h2>
                 <div class="whatsapp">
-                    <a class="whatsapp-box" href="https://wa.me/543435309572" target="_blank">
-                        <img class="whatsapp-box--image" src="foto-wsp-belu.png" />
+                    <a class="whatsapp-box" href="https://wa.me/543434644435" target="_blank">
+                        <img class="whatsapp-box--image" src="foto-mirandose-tomi.jpg" />
                         <div class="whatsapp-box--message">
                             <img src="whatsapp-24.svg"/>
-                            <span>Whatsapp de Belu</span>
+                            <span class="mt-0.5">Whatsapp de Tomi</span>
                         </div>
                     </a>
-                    <a class="whatsapp-box" href="https://wa.me/543434644435" target="_blank">
-                        <img class="whatsapp-box--image" src="foto-wsp-tomi.png" />
+                    <a class="whatsapp-box" href="https://wa.me/543435309572" target="_blank">
+                        <img class="whatsapp-box--image" src="foto-mirandose-belu.jpg" />
                         <div class="whatsapp-box--message">
                             <img src="whatsapp-24.svg"/>
-                            <span>Whatsapp de Tomi</span>
+                            <span class="mt-0.5">Whatsapp de Belu</span>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="section h-24 font-fancy" style="padding-top: 100px; padding-bottom: 300px;">
+        <div class="section font-fancy h-20" style="padding-top: 100px; padding-bottom: 200px;">
             <div class="section--content color__primary">
                 <h2 class="section--header font-normal text-6xl">¡Te esperamos!</h2>
-                <img class="absolute bottom-0 right-0" src="corner-flower.png"/>
+                <!-- <img class="absolute bottom-0 right-0" src="foto-footer.jpeg"/> -->
+                <img class="absolute bottom-0 right-0 pointer-events-none" src="corner-flower.png"/>
             </div>
         </div>
     </main>
     <script>
-        const eventDate = new Date('2025-05-24T13:00:00.000-03:00')
+        const eventDate = new Date('2025-05-24T11:00:00.000-03:00')
         const countdownItemsAmount = document.querySelectorAll('.countdown--item--amount')
         
         function setCountdown() {

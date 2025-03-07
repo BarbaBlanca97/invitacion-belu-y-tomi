@@ -521,9 +521,6 @@
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
-  .w-8 {
-    width: calc(var(--spacing) * 8);
-  }
   .w-\[200px\] {
     width: 200px;
   }

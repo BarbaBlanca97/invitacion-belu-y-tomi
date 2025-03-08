@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belu y Tomi</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/png">
+    <link rel="stylesheet" href="styles_output.css">
+</head>
+<body class="font-display">
+    <main class="color__primary text-center flex flex-col items-center p-3">
+        <a class="flex flex-row gap-2 self-start" href="index.html">
+            <img src="arrow-back-24.svg" />
+            <span class="underline">Volver a la invitación</span>
+        </a>
+        <h1 class="font-fancy text-7xl mt-6 mb-6">Regalos</h1>
+        <img class="w-[100px] pointer-events-none mb-6" src="ornament_flat_3.png"/>
+        <p>Tu presencia ya nos honra y nos bendice. Pero si además queres ayudarnos a empezar, te dejamos una guía!</p>
+        <p class="mt-1">Podés regalar una cuota o las que quieras!</p>
+        <p class="mt-8">El alias para los regalos es <span class="font-semibold">regalo.tomi.belu</span></p>
+        <img class="w-[100px] scale-y-[-1] pointer-events-none mt-6" src="ornament_flat_3.png"/>
+        <div id="gifts" class="flex flex-row flex-wrap justify-center gap-y-[40px] gap-x-[100px] mt-8">
+            <div id="gift-template" class="flex flex-col items-center w-[300px]" style="display: none;">
+                <h3 class="_id_title text-2xl font-semibold">Aire acondicionado</h3>
+                <div class="relative flex items-center w-[150px] h-[150px] my-4 mx-auto">
+                    <img class="_id_image max-w-[150px] max-h-[150px] mx-auto" src="gift-pictures/aire.jpg" />
+                    <img class="_id_icon-check absolute m-auto top-0 bottom-0 left-0 right-0" src="check-60.svg" style="display: none;" />
+                </div>
+                <div class="_id_status_container flex flex-col items-center w-full">
+                    <p>Nos faltan <span class="_id_installments-remaining font-bold">12</span> cuotas de <span class="_id_installments-amount font-bold">$75.000</span> cada una</p>
+                    <div class="w-full flex flex-row gap-2 items-center mt-3">
+                        <div class="relative w-full h-2 bg-gray-300 rounded-full">
+                            <div class="_id_installments-progress bg__primary absolute h-full rounded-full" style="width: 75%;"></div>
+                        </div>
+                        <span class="_id_installments-progress-text">75%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="w-[100px] pointer-events-none mt-10 mb-6" src="ornament_flat_3.png"/>
+    </main>
+    <script>
+        const gifts = [
+            {
+                name: 'Heladera',
+                picture: 'gift-pictures/heladera.jpg',
+                installments: {
+                    total: 12,
+                    paid: 7,
+                    amount: '$70.000',
+                }
+            },
+            {
+                name: 'Cocina',
+                picture: 'gift-pictures/cocina.webp',
+                installments: {
+                    total: 10,
+                    paid: 0,
+                    amount: '$74.000',
+                }
+            },
+            {
+                name: 'Microondas',
+                picture: 'gift-pictures/microondas.jpg',
+                installments: {
+                    total: 10,
+                    paid: 8,
+                    amount: '$20.000',
+                }
+            },
+            {
+                name: 'Pava eléctrica',
+                picture: 'gift-pictures/pava.webp',
+                installments: {
+                    total: 5,
+                    paid: 5,
+                    amount: '$10.000',
+                }
+            },
+            {
+                name: 'Licuadora',
+                picture: 'gift-pictures/licuadora.webp',
+                installments: {
+                    total: 5,
+                    paid: 0,
+                    amount: '$20.000',
+                }
+            },
+            {
+                name: 'Aire acondicionado',
+                picture: 'gift-pictures/aire.jpg',
+                installments: {
+                    total: 20,
+                    paid: 20,
+                    amount: '$75.000',
+                }
+            },
+            {
+                name: 'Sillón',
+                picture: 'gift-pictures/sillon.jpg',
+                installments: {
+                    total: 10,
+                    paid: 0,
+                    amount: '$63.000',
+                }
+            },
+            {
+                name: 'Cama',
+                picture: 'gift-pictures/cama.JPG',
+                installments: {
+                    total: 8,
+                    paid: 2,
+                    amount: '$75.000',
+                }
+            },
+            {
+                name: 'TV',
+                picture: 'gift-pictures/tv.jpg',
+                installments: {
+                    total: 12,
+                    paid: 10,
+                    amount: '$58.000',
+                }
+            },
+        ]
+
+        const giftTemplateElement = document.getElementById('gift-template')
+        const giftsElement = document.getElementById('gifts')
+
+        gifts.forEach(gift => {
+            const newGift = giftTemplateElement.cloneNode(true)
+            newGift.style.display = 'block'
+            newGift.querySelector('._id_title').innerText = gift.name
+            newGift.querySelector('._id_image').src = gift.picture
+
+            if (gift.installments.total !== gift.installments.paid) {
+                newGift.querySelector('._id_installments-remaining').innerText = gift.installments.total - gift.installments.paid
+                newGift.querySelector('._id_installments-amount').innerText = gift.installments.amount
+                const progressPercentage = (gift.installments.paid / gift.installments.total) * 100
+                newGift.querySelector('._id_installments-progress').style.width = `${progressPercentage}%`
+                newGift.querySelector('._id_installments-progress-text').innerText = `${Math.round(progressPercentage)}%`
+            } else {
+                newGift.querySelector('._id_status_container').innerText = 'Ya llegamos! Gracias!'
+                newGift.querySelector('._id_icon-check').style.display = 'block'
+                newGift.querySelector('._id_image').style.opacity = '0.5'
+            }
+
+            giftsElement.appendChild(newGift)
+        })
+    </script>
+</body>
+</html>
